@@ -28,6 +28,6 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs"
-  ],
+, "src/pages/api/auth/signin"  ],
   "exclude": ["node_modules"]
 }
