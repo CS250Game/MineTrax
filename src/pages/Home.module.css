@@ -1,0 +1,10 @@
+/* Home.module.css */
+.bg-image {
+    background-image: url('/minetraxbackground.png'); /* Replace 'background.jpg' with your image path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    z-index: 0;
+    /* Add any other styles you want for the background here */
+  }
