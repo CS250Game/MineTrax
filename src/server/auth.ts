@@ -10,6 +10,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 
 import { env } from "~/env.mjs";
 import { prisma } from "~/server/db";
+import { getSession, useSession } from "next-auth/react";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -40,11 +41,13 @@ declare module "next-auth" {
 export const authOptions: NextAuthOptions = {
   callbacks: {
     session: ({ session, user }) => ({
+      strategy: "jwt",
       ...session,
       user: {
         ...session.user,
         id: user.id,
       },
+      
     }),
   },
   adapter: PrismaAdapter(prisma),
@@ -59,10 +62,14 @@ export const authOptions: NextAuthOptions = {
         username: { label: "Username", type: "text", placeholder: "Username"},
         password: { label: "Password", type: "password"}
       },
+      //Auth can differentiate between correct and incorrect inputs, but does not allow user to actually login
+      //May have to connect to database to pull session data, do this with sqlite before implementation in main database
       async authorize(credentials, req) {
-        const user = {id: "1", name: "C Brien", email: "n/a"}
+        //default user need to connect to databasae
+        const user = {id: "1", name: "CoopDaScoop", email: "n/a", password: "Coopy"}
 
-        if (user) {
+        if (user.name == credentials!.username && user.password == credentials!.password) {
+          
           return user
         } else{
           return null
