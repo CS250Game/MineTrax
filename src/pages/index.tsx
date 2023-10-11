@@ -46,7 +46,7 @@ export default function Home() {
             >
               <h3 className="text-2xl font-bold text-[hsl(120,100%,70%)]">Sign Up →</h3>
               <div className="text-lg">
-                (Sign Up Info)
+                (Sign Up Info) 
               </div>
             </Link>
           </div>
@@ -55,10 +55,25 @@ export default function Home() {
               Begin Tracking...
             </p>
             <Link href = "about">
-            <div className="text-white hover:text-[hsl(120,100%,70%)] mt-auto">
-            (About Us)
-              </div>
+            <button
+          className="fixed bottom-4 left-4 rounded-full text-[hsl(120,100%,70%)] px-6 py-3 font-semibold text-green bg-black no-underline transition hover:bg-black hover:text-white"
+          onClick={() => {
+            // Handle button click logic here
+          }}
+        >
+          About Us
+        </button>
             </Link>
+            <Link href="contact">
+                <button
+                  className="fixed bottom-4 right-5 rounded-full text-[hsl(120,100%,70%)] px-6 py-3 font-semibold text-green bg-black no-underline transition hover:bg-black hover:text-white"
+                  onClick={() => {
+                    // Handle button click logic here
+                  }}
+                >
+                  Contact Us
+                  </button>
+              </Link>
             <AuthShowcase />
           </div>
         </div>
