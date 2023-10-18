@@ -34,7 +34,7 @@ export default function Home() {
         onClick={async (e) => {
          e.preventDefault(); // Prevent the default link behavior
          await signIn(); // Call the signIn function when the button is clicked
-         router.push('/main.tsx')
+         router.push('main.tsx')
          }}
         >
         <h3 className=" text-2xl font-bold text-[hsl(120,100%,70%)] "> Login/Sign-Up →</h3>
