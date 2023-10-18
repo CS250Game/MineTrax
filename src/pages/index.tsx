@@ -34,6 +34,7 @@ export default function Home() {
         onClick={async (e) => {
          e.preventDefault(); // Prevent the default link behavior
          await signIn(); // Call the signIn function when the button is clicked
+         console.log('After signIn'); // Check if this log appears
          router.push('main.tsx')
          }}
         >
