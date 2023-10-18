@@ -2,11 +2,12 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "./Home.module.css";
+import { useRouter } from 'next/router';
 
 import { api } from "~/utils/api";
 
 export default function Home() {
-
+  const router = useRouter();
   return (
     <>
     <Head>
@@ -30,9 +31,10 @@ export default function Home() {
          className="flex max-w-xs flex-col gap-2 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
         href="#" // Replace with the actual login URL if applicable
         style={{ backgroundColor: "black"}}
-        onClick={(e) => {
+        onClick={async (e) => {
          e.preventDefault(); // Prevent the default link behavior
-          signIn(); // Call the signIn function when the button is clicked
+         await signIn(); // Call the signIn function when the button is clicked
+         router.push('/main')
          }}
         >
         <h3 className=" text-2xl font-bold text-[hsl(120,100%,70%)] "> Login/Sign-Up →</h3>
