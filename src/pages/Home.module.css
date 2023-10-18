@@ -1,25 +1,49 @@
 /* Home.module.css */
 
-.bg-image { /* This is the LOGO */
-  background-image: url('/minetraxbackground.png'); 
-  background-size: 10%; /* You may need to adjust this value based on your design */
+.bg-image {
+  background-image: url('/minetraxbackground.png');
+  background-size: 10%;
   background-repeat: no-repeat;
-  background-position: 70% 30%; /* Center the background image */
-  background-attachment: fixed; /* Keep the background fixed while scrolling */
+  background-position: 70% 30%;
+  background-attachment: fixed;
   position: relative;
-  /* Add any other styles you want for the background here */
 }
 
-  .bg-image2 {
-    background-image: url('/BackgroundImage.jpeg'); /* This is the background */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -100; /* Place the background behind other content */
-    /* Add any other styles you want for the background here */
-  }
+.bg-image2 {
+  background-image: url('/BackgroundImage.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+}
+
+.bg-image3 {
+  background-image: url('/giphy.gif');
+  background-size: 8%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: fixed;
+  top: 18%;
+  left: 10%;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+}
+
+.bg-image4 {
+  background-image: url('/giphy.gif');
+  background-size: 8%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: fixed;
+  top: 18%;
+  left: -10%;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+}

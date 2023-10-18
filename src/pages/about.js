@@ -10,11 +10,11 @@ const AboutPage = () => {
         <p style={{ textAlign: 'center' }}>
           This is our first project welcome to MineTrax.
           <div>
-            Our names are Avery, Kaden, Gregory, Cooper, and Andrew
+          Our names are Avery, Kaden, Gregory, Cooper, and Andrew
           </div>
           We are young developers with a dream to make the best game tracking software in the market.
           <div>
-            We all love video games and coding.
+          We all love video games and coding.
           </div>
           We hope that this is useful and fun to use to help people connect on games everyone loves.
         </p>
