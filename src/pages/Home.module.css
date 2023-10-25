@@ -47,3 +47,18 @@
   height: 100%;
   z-index: -100;
 }
+
+/* Home.module.css */
+.grayBar {
+  height: 60px; /* Adjust the height as needed */
+  background-color: #ccc; /* Use the desired gray color */
+  width: 100%;
+}
+
+.logoText {
+  margin-top: 10px; /* Adjust the top margin as needed */
+  margin-left: 610px; 
+  font-size: 3em; /* Adjust the font size as needed */
+  font-weight: bold;
+  color: #333; /* Use the desired text color */
+}
