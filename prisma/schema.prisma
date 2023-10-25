@@ -65,3 +65,9 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+model MCUser{
+    UUID        String  @id @default(cuid())
+    world_name  String
+
+}

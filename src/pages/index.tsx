@@ -55,7 +55,7 @@ export default function Home() {
             // Handle button click logic here
           }}
         >
-          About Us
+          About Us 
         </button>
             </Link>
             <Link href="contact">
