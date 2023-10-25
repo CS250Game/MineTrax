@@ -57,7 +57,7 @@ export const authOptions: NextAuthOptions = {
       if(session.user) {
         session.user.id = user.id
       }
-      return session
+      return session;
     },
     /*session: ({ session, user }) => ({
       strategy: "jwt",
@@ -72,12 +72,14 @@ export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     DiscordProvider({
+      name: "discord",
       clientId: env.DISCORD_CLIENT_ID,
       clientSecret: env.DISCORD_CLIENT_SECRET,
     }),
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+      name: "google",
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET
     }),
     CredentialsProvider({
       name: "Credentials",
@@ -85,13 +87,14 @@ export const authOptions: NextAuthOptions = {
         username: { label: "Username", type: "text", placeholder: "Username"},
         password: { label: "Password", type: "password"}
       },
+      
       //Auth can differentiate between correct and incorrect inputs, but does not allow user to actually login
       //May have to connect to database to pull session data, do this with sqlite before implementation in main database
       async authorize(credentials, req) {
         //default user need to connect to databasae
         const user = {id: "1", name: "CoopDaScoop", email: "n/a", password: "Coopy"}
 
-        if (user.name == credentials!.username && user.password == credentials!.password) {
+        if (user.name == credentials?.username && user.password == credentials?.password) {
           return user
         } else{
           return null

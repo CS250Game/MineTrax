@@ -3,9 +3,8 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "./Home.module.css";
 import { useRouter } from 'next/router';
-
 import { api } from "~/utils/api";
-
+import { useNavigate } from "react-router-dom";
 export default function Home() {
   const router = useRouter();
   return (
@@ -26,29 +25,26 @@ export default function Home() {
         </h1>
 
         <div className="justify-centergrid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-            
-          <Link
-         className="flex max-w-xs flex-col gap-2 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-        href="#" // Replace with the actual login URL if applicable
-        style={{ backgroundColor: "black"}}
-        onClick={async (e) => {
-         e.preventDefault(); // Prevent the default link behavior
-         await signIn(); // Call the signIn function when the button is clicked
-         console.log('After signIn'); // Check if this log appears
-         router.push('main.tsx')
-         }}
-        >
-        <h3 className=" text-2xl font-bold text-[hsl(120,100%,70%)] "> Login/Sign-Up →</h3>
-       <div className="text-lg">
-        (Click Here To Join)
-        </div>
-      </Link>
+        <Link
+   className="flex max-w-xs flex-col gap-2 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
+   href="/main" // Replace with the actual login URL if applicable
+   style={{ backgroundColor: "black" }}
+   onClick={async (e) => {
+    e.preventDefault();
+    signIn('google', { callbackUrl: 'http://localhost:3000/main' })
+    signIn('discord',{ callbackUrl: 'http://localhost:3000/main' })
+}}
+>
+   <h3 className="text-2xl font-bold text-[hsl(120,100%,70%)]"> Login/Sign-Up →</h3>
+   <div className="text-lg">(Click Here To Join)</div>
+</Link>
           </div>
           <div className="flex flex-col items-center gap-2">
             <p className="text-2xl text-[hsl(120,100%,70%)]">
               Begin Tracking...
             </p>
-            <Link href = "about">
+            <Link 
+            href = "about">
             <button
           className="fixed bottom-4 left-4 rounded-full text-[hsl(120,100%,70%)] px-6 py-3 font-semibold text-green bg-black no-underline transition hover:bg-black hover:text-white"
           onClick={() => {
