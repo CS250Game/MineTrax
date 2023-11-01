@@ -3,7 +3,7 @@ import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
 
 import { api } from "~/utils/api";
-
+import "~/styles/fonts.css"; // Add this line to import the font styles
 import "~/styles/globals.css";
 
 const MyApp: AppType<{ session: Session | null }> = ({
