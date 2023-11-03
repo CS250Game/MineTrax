@@ -67,7 +67,27 @@ model VerificationToken {
 }
 
 model MCUser{
-    UUID        String  @id @default(cuid())
-    world_name  String
+    user_ID     String  @id @default(cuid())
+    UUID        String  @unique
+    worlds      World[]
+}
+
+model World{
+    world_ID        String @id @default(cuid())
+    mcuser          MCUser @relation(fields: [mcuser_id], references: [user_ID])
+    mcuser_id       String
+    world_name      String @unique
+    date_created    String
+    stats           Stats[]
+}
+
+
+
+model Stats{
+    stat_ID     String @id @default(cuid())
+    world       World  @relation(fields: [world_id], references: [world_ID])
+    world_id    String
+    stat_name   String
+    stat_val    String
 
 }
