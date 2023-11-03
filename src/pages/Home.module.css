@@ -48,17 +48,51 @@
   z-index: -100;
 }
 
+
 /* Home.module.css */
 .grayBar {
-  height: 60px; /* Adjust the height as needed */
-  background-color: #ccc; /* Use the desired gray color */
-  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #000000; /* Set your desired background color */
+  padding: .5%;
+}
+
+.lowerBar {
+  /* Add styles for the lower bar as needed */
+  background: linear-gradient(55deg, #090909, #00ffb3); /* Set your desired background color */
+  padding: .8%;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 5%; /* Adjust the width of your logo */
+  height: auto;
+  margin-right: 30%; /* Adjust the margin as needed */
+}
+
+.welcomeText {
+  color: #00ffb3; /* Set the color for the welcome text */
+  font-size: 100%; /* Adjust the font size as needed */
+  margin-left: 1.5%; 
+  font-family: 'Playpen Sans', sans-serif;
+}
+
+.signOutButton {
+  color: #00ffb3; /* Set the color for the sign-out button text */
+  margin-left: 37%;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 130%;
 }
 
 .logoText {
-  margin-top: 10px; /* Adjust the top margin as needed */
-  margin-left: 610px; 
-  font-size: 3em; /* Adjust the font size as needed */
-  font-weight: bold;
-  color: #333; /* Use the desired text color */
+  font-size: 200%; /* Adjust the font size as needed */
+  color: #00ffb3;
+  font-family: 'Anton', sans-serif;
 }
