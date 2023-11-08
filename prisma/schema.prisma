@@ -69,6 +69,7 @@ model VerificationToken {
 model MCUser{
     user_ID     String  @id @default(cuid())
     UUID        String  @unique
+    username    String
     worlds      World[]
 }
 

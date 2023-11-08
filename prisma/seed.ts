@@ -7,6 +7,7 @@ async function main(){
         update: {},
         create: {
             UUID: '1234',
+            username: 'CoopDaScoop32',
             worlds:{
               create:{
                 world_name: 'New_World',
