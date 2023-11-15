@@ -24,6 +24,49 @@ async function main(){
         },
     })
     console.log({user_test})
+
+    const user_test2 = await prisma.mCUser.upsert({
+      where: {UUID: '4321'},
+      update: {},
+      create: {
+          UUID: '4321',
+          username: 'ScoopTheCoop23',
+          worlds:{
+            create:[{
+              world_name: 'My_World',
+              date_created: '3/28/20',
+              stats: {
+                create: [{
+                  stat_name: 'chickens_killed',
+                  stat_val: '3'
+                },
+                {
+                  stat_name: 'deaths',
+                  stat_val: '204'
+                }],
+                
+              },
+            },
+            {
+              world_name: 'World2',
+              date_created: '10/31/09',
+              stats:{
+                create:[{
+                  stat_name:'chickens_killed',
+                  stat_val:'20'
+                },
+                {
+                  stat_name:'deaths',
+                  stat_val:'64'
+                }],
+                
+              }
+            }
+          ],
+          },
+      },
+  })
+  console.log({user_test2})
 }
 
 main()

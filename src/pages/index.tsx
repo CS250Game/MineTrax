@@ -55,7 +55,7 @@ export default function Home() {
           About Us 
         </button>
             </Link>
-            <Link href="contact">
+            <Link href="test">
                 <button
                   className="fixed bottom-4 right-5 rounded-full text-[hsl(120,100%,70%)] px-6 py-3 font-semibold text-green bg-black no-underline transition hover:bg-black hover:text-white"
                             onClick={() => {

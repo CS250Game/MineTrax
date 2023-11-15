@@ -7,7 +7,7 @@ export default async (req, res) => {
     try {
       const user = await prisma.mCUser.findFirst({
         where:{
-            UUID: '1234'
+            UUID: '4321'
         },
         include:{
             worlds:{
