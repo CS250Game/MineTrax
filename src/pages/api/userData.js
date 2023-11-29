@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 export default async (req, res) => {
   if (req.method === 'GET') {
     try {
-      const user = await prisma.mCUser.findFirst({
+      const user = await prisma.mcuser.findFirst({
         where:{
             UUID: '4321'
         },
