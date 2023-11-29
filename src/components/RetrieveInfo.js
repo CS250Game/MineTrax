@@ -1,17 +1,21 @@
 
 import React, { useState, useEffect } from 'react';
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
 
-const UserInfo = () => {
+const UserInfo = ({ onDataLoaded }) => {
   const [userData, setUserData] = useState(null);
-
+  
   useEffect(() => {
-    // Fetch user data from the API endpoint
     const fetchUserData = async () => {
       try {
-        const response = await fetch('/api/userData'); // The API endpoint URL
+        const response = await fetch('/api/userData');
         if (response.ok) {
           const user = await response.json();
           setUserData(user);
+
+          // Pass the user data to the parent component
+          onDataLoaded(user);
         } else {
           console.error('Error fetching user data:', response.statusText);
         }
@@ -22,7 +26,7 @@ const UserInfo = () => {
 
     fetchUserData();
   }, []);
-
+  
   return (
     <div>
       {userData ? (
@@ -71,3 +75,28 @@ const UserInfo = () => {
 };
 
 export default UserInfo;
+
+export const userData = UserInfo; 
+
+export const getUserName = () => {
+  // Return the username
+  return userData?.username;
+};
+
+export const getUserWorlds = () => {
+  // Return the worlds array
+  return userData?.worlds || [];
+};
+
+export const getUserWorldName = () => {
+  // Return the worlds array
+  return userData?.world_name || [];
+};
+export const getUserWorldID = () => {
+  // Return the worlds array
+  return userData?.world_ID || [];
+};
+export const getUserWorldDate = () => {
+  // Return the worlds array
+  return userData?.world.date_created || [];
+};
