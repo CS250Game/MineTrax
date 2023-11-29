@@ -66,28 +66,28 @@ model VerificationToken {
     @@unique([identifier, token])
 }
 
-model MCUser{
-    user_ID     String  @id @default(cuid())
-    UUID        String  @unique
+model mcuser{
+    UUID        String @id @unique
     username    String
-    worlds      World[]
+    worlds      world[]
 }
 
-model World{
-    world_ID        String @id @default(cuid())
-    mcuser          MCUser @relation(fields: [mcuser_id], references: [user_ID])
+model world{
+    world_ID        Int @id @default(autoincrement())
+    mcuser          mcuser @relation(fields: [mcuser_id], references: [UUID])
     mcuser_id       String
-    world_name      String @unique
+    world_name      String
     date_created    String
-    stats           Stats[]
+    stats           stats[]
 }
 
 
 
-model Stats{
-    stat_ID     String @id @default(cuid())
-    world       World  @relation(fields: [world_id], references: [world_ID])
-    world_id    String
+model stats{
+    stat_ID     Int @id @default(autoincrement())
+    UUID        String
+    world       world  @relation(fields: [world_id], references: [world_ID])
+    world_id    Int
     stat_name   String
     stat_val    String
 
