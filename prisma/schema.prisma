@@ -77,7 +77,6 @@ model world{
     mcuser          mcuser @relation(fields: [uuid], references: [uuid])
     uuid            String
     world_name      String
-    date_created    String
     stats           stats[]
 }
 
