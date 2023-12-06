@@ -67,26 +67,25 @@ model VerificationToken {
 }
 
 model mcuser{
-    UUID        String @id @unique
+    uuid        String @id @unique
     username    String
     worlds      world[]
 }
 
 model world{
-    world_ID        Int @id @default(autoincrement())
-    mcuser          mcuser @relation(fields: [mcuser_id], references: [UUID])
-    mcuser_id       String
+    world_id        Int @id @default(autoincrement())
+    mcuser          mcuser @relation(fields: [uuid], references: [uuid])
+    uuid            String
     world_name      String
-    date_created    String
     stats           stats[]
 }
 
 
 
 model stats{
-    stat_ID     Int @id @default(autoincrement())
-    UUID        String
-    world       world  @relation(fields: [world_id], references: [world_ID])
+    stat_id     Int @id @default(autoincrement())
+    uuid        String
+    world       world  @relation(fields: [world_id], references: [world_id])
     world_id    Int
     stat_name   String
     stat_val    String
