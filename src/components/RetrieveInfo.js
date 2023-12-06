@@ -32,14 +32,14 @@ const UserInfo = ({ onDataLoaded }) => {
       {userData ? (
         <div>
           <h1>User Data</h1>
-          <p>UUID: {userData.UUID}</p>
+          <p>UUID: {userData.uuid}</p>
           <p>Username: {userData.username}</p>
           {userData.worlds.length > 0 ? (
             <div>
               <h2>Worlds</h2>
               <ul>
                 {userData.worlds.map((world) => (
-                  <li key={world.world_ID}>
+                  <li key={world.world_id}>
                     <p>World Name: {world.world_name}</p>
                     <p>Date Created: {world.date_created}</p>
                     {world.stats.length > 0 ? (
@@ -47,7 +47,7 @@ const UserInfo = ({ onDataLoaded }) => {
                         <h3>Stats</h3>
                         <ul>
                           {world.stats.map((stat) => (
-                            <li key={stat.stat_ID}>
+                            <li key={stat.stat_id}>
                               <p>Stat Name: {stat.stat_name}</p>
                               <p>Stat Value: {stat.stat_val}</p>
                               {/* Add other Stat data here */}
@@ -94,7 +94,7 @@ export const getUserWorldName = () => {
 };
 export const getUserWorldID = () => {
   // Return the worlds array
-  return userData?.world_ID || [];
+  return userData?.world_id || [];
 };
 export const getUserWorldDate = () => {
   // Return the worlds array

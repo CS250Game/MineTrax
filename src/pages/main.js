@@ -60,7 +60,7 @@ const MainPage = () => {
         <UserInfo onDataLoaded={handleDataLoaded} />
           {stats &&
             stats.map((stat) => (
-              <NavDropdown.Item key={stat.stat_ID} style={{ color: '#ff0000' }}>
+              <NavDropdown.Item key={stat.stat_id} style={{ color: '#ff0000' }}>
                 <div>
                   <p>Stat Name: {stat.stat_name}</p>
                   <p>Stat Value: {stat.stat_val}</p>
@@ -74,7 +74,7 @@ const MainPage = () => {
       <NavDropdown title="Stats" id="stats-dropdown" style={{ color: '#000000', fontWeight: 'bold' }}>
         {stats &&
           stats.map((stat) => (
-            <NavDropdown.Item key={stat.stat_ID} style={{ color: '#ff0000' }}>
+            <NavDropdown.Item key={stat.stat_id} style={{ color: '#ff0000' }}>
               <div>
                 {stat.stat_name}: {stat.stat_val}
               </div>
