@@ -31,7 +31,7 @@ const UserInfo = ({ onDataLoaded }) => {
     <div>
       {userData ? (
         <div>
-          <h1>User Data</h1>
+          <h1>UserData</h1>
           <p>UUID: {userData.uuid}</p>
           <p>Username: {userData.username}</p>
           {userData.worlds.length > 0 ? (
@@ -77,6 +77,8 @@ const UserInfo = ({ onDataLoaded }) => {
 export default UserInfo;
 
 export const userData = UserInfo; 
+
+
 
 export const getUserName = () => {
   // Return the username

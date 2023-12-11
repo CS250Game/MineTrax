@@ -1,13 +1,19 @@
 import { PrismaClient } from '@prisma/client';
-
+import { getMCUSER } from 'src/pages/main.js'
 const prisma = new PrismaClient();
 
 export default async (req, res) => {
   if (req.method === 'GET') {
     try {
+      const { username } = req.query; // Get the username from the query parameters
+
+      if (!username) {
+        return res.status(400).json({ error: 'Username is required' });
+      }
+
       const user = await prisma.mcuser.findFirst({
         where:{
-            UUID: '4321'
+            username: username,
         },
         include:{
             worlds:{
