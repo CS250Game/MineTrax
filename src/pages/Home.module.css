@@ -80,13 +80,13 @@
 .welcomeText {
   color: #00ffb3; /* Set the color for the welcome text */
   font-size: 100%; /* Adjust the font size as needed */
-  margin-left: 1.5%; 
+  margin-right: 1.5%; 
   font-family: 'Playpen Sans', sans-serif;
 }
 
 .signOutButton {
   color: #00ffb3; /* Set the color for the sign-out button text */
-  margin-left: 37%;
+  margin-left: 23%;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 130%;
 }
@@ -95,4 +95,9 @@
   font-size: 200%; /* Adjust the font size as needed */
   color: #00ffb3;
   font-family: 'Anton', sans-serif;
+}
+
+.searchButton{
+  color:#00ffb3;
+  margin-left: 3px; /* Adjust the value as needed */
 }
