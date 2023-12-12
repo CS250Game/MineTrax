@@ -2,13 +2,14 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main(){
+    return;
     const user_test = await prisma.mcuser.upsert({
         where: {uuid: '1234'},
         update: {},
         create: {
             uuid: '1234',
             username: 'CoopDaScoop32',
-            worlds:{
+            world:{
               create:{
                 world_name: 'New_World',
                 stats: {
@@ -31,7 +32,7 @@ async function main(){
       create: {
           uuid: '4321',
           username: 'ScoopTheCoop23',
-          worlds:{
+          world:{
             create:[{
               world_name: 'My_World',
               stats: {
