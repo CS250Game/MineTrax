@@ -103,19 +103,8 @@ const MainPage = () => {
         
       <div className={styles.lowerBar}>
         {/* Render individual stats in a dropdown */}
-        <NavDropdown title="User Stats" id="user-stats-dropdown" style={{ color: '#000000', fontWeight: 'bold' }}>
+        <NavDropdown title="User Stats" id="user-stats-dropdown" style={{ color: '#00ffb3', fontWeight: 'bold' }}>
         <UserInfo onClick={handleDataLoaded}/>
-          {/*{stats &&
-            stats.map((stat) => (
-              <NavDropdown.Item key={stat.stat_id} style={{ color: '#ff0000' }}>
-                <div>
-                  <p>Stat Name: {stat.stat_name}</p>
-                  <p>Stat Value: {stat.stat_val}</p>
-                  {/* Add other Stat data here }
-                </div>
-              </NavDropdown.Item>
-            ))}*/}
-            {/* Displaying user info */}
           {userData && (
             <NavDropdown.Item key={userData.uuid} style={{ color: '#ff0000' }}>
               <div>
@@ -131,7 +120,7 @@ const MainPage = () => {
                     <p>Date Created: {world.date_created}</p>
                     {world.stats.length > 0 ? (
                       <div>
-                        <h3>Stats</h3>
+                        <h3> Stats</h3>
                         <ul>
                           {world.stats.map((stat) => (
                             <li key={stat.stat_id}>
@@ -161,16 +150,18 @@ const MainPage = () => {
         </NavDropdown>
 
       {/* Display individual stats in a dropdown */}
+      <div className="stats-dropdown-container">
       <NavDropdown title="Stats" id="stats-dropdown" style={{ color: '#000000', fontWeight: 'bold' }}>
         {stats &&
           stats.map((stat) => (
-            <NavDropdown.Item key={stat.stat_id} style={{ color: '#ff0000' }}>
+            <NavDropdown.Item key={stat.stat_id} style={{ color: '#ff0000'}}>
               <div>
                 {stat.stat_name}: {stat.stat_val}
               </div>
             </NavDropdown.Item>
           ))}
       </NavDropdown>
+      </div>
 
       {/* Display selected world's ID in a dropdown */}
       <NavDropdown title="Selected World" id="selected-world-dropdown" style={{ color: '#000000', fontWeight: 'bold' }}>

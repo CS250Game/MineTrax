@@ -33,7 +33,7 @@ export default function Home() {
    onClick={async (e) => {
     e.preventDefault();
     // Previous URL if needed http://localhost:3000/main
-    signIn('google', { callbackUrl: 'mine-trax-one.vercel.app/main'})
+    signIn('google', { callbackUrl: 'http://localhost:3000/main'})
     signIn('discord',{ callbackUrl: 'mine-trax-one.vercel.app/main'})
 }}
 >

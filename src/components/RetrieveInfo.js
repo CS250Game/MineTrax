@@ -48,7 +48,7 @@ const UserInfo = ({ onDataLoaded }) => {
                         <ul>
                           {world.stats.map((stat) => (
                             <li key={stat.stat_id}>
-                              <p>Stat Name: {stat.stat_name}</p>
+                              <p> Stat Name: {stat.stat_name}</p>
                               <p>Stat Value: {stat.stat_val}</p>
                               {/* Add other Stat data here */}
                             </li>
@@ -68,7 +68,7 @@ const UserInfo = ({ onDataLoaded }) => {
           )}
         </div>
       ) : (
-        <p>Loading user data...</p>
+        <p style={{ marginTop: '10px' }}>Please Search For User..</p>
       )}
     </div>
   );
