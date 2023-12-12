@@ -32,8 +32,9 @@ export default function Home() {
    style={{ backgroundColor: "black" }}
    onClick={async (e) => {
     e.preventDefault();
-    signIn('google', { callbackUrl: 'http://localhost:3000/main' })
-    signIn('discord',{ callbackUrl: 'http://localhost:3000/main' })
+    // Previous URL if needed http://localhost:3000/main
+    signIn('google', { callbackUrl: 'mine-trax-one.vercel.app/main'})
+    signIn('discord',{ callbackUrl: 'mine-trax-one.vercel.app/main'})
 }}
 >
    <h3 className="text-2xl font-bold text-[hsl(120,100%,70%)]"> Login/Sign-Up →</h3>
