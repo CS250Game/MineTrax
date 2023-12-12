@@ -1,7 +1,4 @@
-
 import React, { useState, useEffect } from 'react';
-import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
 
 const UserInfo = ({ onDataLoaded }) => {
   const [userData, setUserData] = useState(null);
